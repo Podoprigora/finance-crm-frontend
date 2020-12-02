@@ -2,7 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const CssMinimizerPligin = require('css-minimizer-webpack-plugin');
+// const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (env = {}) => {
     const devMode = env.DEV;
@@ -14,13 +15,13 @@ module.exports = (env = {}) => {
         },
         plugins: [
             ...(!devMode ? [new CleanWebpackPlugin()] : []),
-            ...(!devMode ? [new CopyPlugin([{ from: './remote', to: 'remote' }])] : []),
             new MiniCssExtractPlugin({
                 filename: devMode ? '[name].css' : 'resources/[name]-[contenthash].css',
                 chunkFilename: devMode ? '[name].css' : 'resources/[name]-[contenthash].css'
             }),
             new HtmlWebpackPlugin({
-                template: 'public/index.html'
+                template: 'public/index.html',
+                favicon: 'public/favicon.png'
             })
         ],
         output: {
@@ -39,6 +40,12 @@ module.exports = (env = {}) => {
                         name: 'vendors',
                         chunks: 'all'
                     },
+                    antd: {
+                        test: /[\\/]antd-theme[\\/]/,
+                        name: 'antd-theme',
+                        chunks: 'all',
+                        enforce: true
+                    },
                     styles: {
                         test: /\.css$/,
                         name: 'styles',
@@ -46,7 +53,8 @@ module.exports = (env = {}) => {
                         enforce: true
                     }
                 }
-            }
+            },
+            minimizer: [new CssMinimizerPligin()]
         },
         performance: {
             maxEntrypointSize: 400000,
@@ -85,6 +93,67 @@ module.exports = (env = {}) => {
                         },
                         {
                             loader: 'eslint-loader'
+                        }
+                    ]
+                },
+                {
+                    test: /\.less$/,
+                    exclude: /stylesheet/,
+                    use: [
+                        {
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                publicPath: '../'
+                            }
+                        },
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: devMode
+                            }
+                        },
+                        {
+                            loader: 'less-loader',
+                            options: {
+                                // https://github.com/ant-design/ant-motion/issues/44#issuecomment-735511000
+                                lessOptions: {
+                                    javascriptEnabled: true
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    test: /\.(scss|css)$/,
+                    use: [
+                        {
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                publicPath: '../'
+                            }
+                        },
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: devMode
+                            }
+                        },
+
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                sourceMap: devMode,
+                                plugins: () => [require('autoprefixer')]
+                            }
+                        },
+                        {
+                            loader: 'resolve-url-loader'
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true // Required for resolve-url-loader
+                            }
                         }
                     ]
                 }
