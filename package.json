@@ -59,9 +59,12 @@
         "less": "^3.12.2",
         "less-loader": "^7.1.0",
         "mini-css-extract-plugin": "^0.9.0",
+        "node-sass": "^5.0.0",
         "postcss-loader": "^3.0.0",
         "prettier": "^1.19.1",
         "resolve-url-loader": "^3.1.2",
+        "sass": "^1.29.0",
+        "sass-loader": "^10.1.0",
         "style-loader": "^1.2.1",
         "url-loader": "^3.0.0",
         "webpack": "^4.44.1",
@@ -78,7 +81,6 @@
         "immer": "^7.0.14",
         "lodash": "^4.17.20",
         "moment": "^2.29.1",
-        "node-sass": "^5.0.0",
         "prop-types": "^15.7.2",
         "react": "^16.13.1",
         "react-custom-scrollbars": "^4.2.1",
@@ -87,8 +89,6 @@
         "react-router-dom": "^5.2.0",
         "react-text-mask": "^5.4.3",
         "react-transition-group": "^4.4.1",
-        "sass": "^1.29.0",
-        "sass-loader": "^10.1.0",
         "yup": "^0.29.3"
     }
 }
