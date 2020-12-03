@@ -1,0 +1,14 @@
+{
+    "meta": {
+        "status": 200
+    },
+    "data": [
+        {
+            "token": "test",
+            "name": "Иванов Петр Александрович",
+            "email": "aaa@gmail.com",
+            "role": "admin"
+        }
+    ],
+    "errors": []
+}

@@ -1,0 +1,30 @@
+.u-focus-outline-0 {
+	&:focus {
+		outline: none;
+	}
+}
+
+.u-overflow-hidden {
+	overflow: hidden;
+}
+
+.u-absolute-overflow {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	overflow: auto;
+}
+
+.u-absolute-filled {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.u-centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

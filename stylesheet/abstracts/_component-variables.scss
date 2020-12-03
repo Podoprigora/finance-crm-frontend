@@ -1,0 +1,43 @@
+$body-color: $grey-3;
+
+$spacing: 8px;
+
+$spacing-scale-0: 0;
+$spacing-scale-1: $spacing * 0.25; // 2px
+$spacing-scale-2: $spacing * 0.5; // 4px
+$spacing-scale-3: $spacing * 0.75; // 6px
+$spacing-scale-4: $spacing; // 8px
+$spacing-scale-5: $spacing * 1.25; // 1px
+$spacing-scale-6: $spacing * 1.5; // 12px
+$spacing-scale-7: $spacing * 1.75; // 14px
+$spacing-scale-8: $spacing * 2; // 16px
+$spacing-scale-9: $spacing * 2.25; // 18px
+$spacing-scale-10: $spacing * 2.5; // 2px
+$spacing-scale-11: $spacing * 2.75; // 22px
+$spacing-scale-12: $spacing * 3; // 24px
+$spacing-scale-13: $spacing * 3.25; // 26px
+$spacing-scale-14: $spacing * 3.5; // 28px
+$spacing-scale-15: $spacing * 3.75; // 3px
+$spacing-scale-18: $spacing * 4.5; // 36px
+$spacing-scale-24: $spacing * 6; // 48px
+
+$spacing-scale: (
+	"0": $spacing-scale-0,
+	"1": $spacing-scale-1,
+	"2": $spacing-scale-2,
+	"3": $spacing-scale-3,
+	"4": $spacing-scale-4,
+	"5": $spacing-scale-5,
+	"6": $spacing-scale-6,
+	"7": $spacing-scale-7,
+	"8": $spacing-scale-8,
+	"9": $spacing-scale-9,
+	"10": $spacing-scale-10,
+	"11": $spacing-scale-11,
+	"12": $spacing-scale-12,
+	"13": $spacing-scale-13,
+	"14": $spacing-scale-14,
+	"15": $spacing-scale-15,
+	"18": $spacing-scale-18,
+	"24": $spacing-scale-24
+);
