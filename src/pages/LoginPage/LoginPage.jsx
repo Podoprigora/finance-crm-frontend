@@ -16,7 +16,7 @@ const LoginPage = () => {
     const handleAsyncFormSubmit = useCallback(
         async (values) => {
             setLoading(true);
-            const response = await AuthService.login(values, false);
+            const response = await AuthService.login(values);
 
             if (isMounterRef.current) {
                 setLoading(false);

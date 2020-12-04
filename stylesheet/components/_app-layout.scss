@@ -1,0 +1,62 @@
+.app-layout {
+	background-color: $body-color;
+
+	& &__header,
+	& &__footer {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		line-height: 1;
+		padding: 0 $spacing-scale-12;
+		overflow: hidden;
+	}
+
+	& &__header {
+		position: fixed;
+		width: 100%;
+		background-color: $white;
+		border-bottom: 1px solid $layout-border-color;
+		z-index: 1;
+	}
+
+	& &__sider {
+		position: fixed;
+		height: 100vh;
+		background-color: $white;
+		overflow: auto;
+		z-index: 1;
+
+		&--left {
+			border-right: 1px solid $layout-border-color;
+			left: 0;
+		}
+	}
+
+	& &__footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		background-color: $white;
+		border-top: 1px solid $layout-border-color;
+		z-index: 1;
+	}
+
+	& &__breadcrumb {
+		position: fixed;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		background-color: $white;
+		width: 100%;
+		padding: 0 $spacing-scale-12;
+		border-bottom: 1px solid $layout-border-color;
+		overflow: hidden;
+		z-index: 1;
+	}
+
+	&__content {
+		padding: $spacing-scale-12;
+		background-color: $body-color;
+		min-height: 2000px;
+	}
+}
