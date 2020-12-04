@@ -5,7 +5,7 @@ export default class ServiceResponse {
                 const json = JSON.parse(response);
                 this.response = json || {};
             } catch (e) {
-                console.error(`[ServiceResponse]: Can't convert string: ${response} to json!`);
+                console.error(`[ServiceResponse] Can't convert string: ${response} to json!`);
             }
         }
 

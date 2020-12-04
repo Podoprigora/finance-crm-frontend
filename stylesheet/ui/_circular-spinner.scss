@@ -1,0 +1,71 @@
+.circular-spinner {
+	$this: &;
+
+	display: inline-block;
+	stroke: $icon-color;
+
+	&--primary {
+		stroke: $color-primary;
+	}
+
+	&--small {
+		width: 24px;
+		height: 24px;
+
+		#{$this}__svg-circle {
+			stroke-width: 4px;
+		}
+	}
+
+	&--medium {
+		width: 36px;
+		height: 36px;
+
+		#{$this}__svg-circle {
+			stroke-width: 3px;
+		}
+	}
+
+	&--large {
+		width: 60px;
+		height: 60px;
+
+		#{$this}__svg-circle {
+			stroke-width: 2.25px;
+		}
+	}
+
+	&__svg {
+		animation: circular-spinner-rotate-animation 1.2s linear infinite;
+	}
+
+	&__svg-circle {
+		stroke: inherit;
+		stroke-linecap: round;
+		stroke-dasharray: 31px, 124px;
+		stroke-dashoffset: 0px;
+		fill: none;
+		animation: cirgular-spinner-circular-dash 1.4s ease-in-out infinite;
+	}
+}
+
+@keyframes circular-spinner-rotate-animation {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes cirgular-spinner-circular-dash {
+	0% {
+		stroke-dasharray: 1px, 124px;
+		stroke-dashoffset: 0px;
+	}
+	50% {
+		stroke-dasharray: 100px, 124px;
+		stroke-dashoffset: -15px;
+	}
+	100% {
+		stroke-dasharray: 100px, 124px;
+		stroke-dashoffset: -120px;
+	}
+}

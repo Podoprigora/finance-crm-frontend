@@ -1,8 +1,10 @@
 import React, { memo, useCallback } from 'react';
-import { Typography } from 'antd';
+import { Typography, Spin } from 'antd';
 
 import AuthService from '../../services/AuthService';
 import LoginForm from './LoginForm';
+import LinearSpinner from '../../ui/LinearSpinner/LinearSpinner';
+import CircularSpinner from '../../ui/CircularSpinner/CircularSpinner';
 
 const LoginPage = () => {
     const handleAsyncFormSubmit = useCallback(async (values) => {
@@ -17,7 +19,7 @@ const LoginPage = () => {
 
     return (
         <div className="login-page">
-            <article className="login-page__card">
+            <article className="login-page__card u-position-relative u-overflow-hidden">
                 <header className="login-page__card-header">
                     <Typography.Title className="login-page__card-title" level={4}>
                         Войти в систему

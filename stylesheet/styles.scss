@@ -1,5 +1,5 @@
 @import "./abstracts/color-palette";
-@import "./abstracts/component-variables";
+@import "./abstracts/variables";
 
 @import "./base";
 @import "./utils/color";
@@ -8,5 +8,8 @@
 @import "./utils/placement";
 @import "./utils/spacing";
 @import "./utils/text";
+
+@import './ui/linear-spinner';
+@import './ui/circular-spinner';
 
 @import "./components/login-page";
