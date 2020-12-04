@@ -45,3 +45,11 @@ $spacing-scale: (
 	"18": $spacing-scale-18,
 	"24": $spacing-scale-24
 );
+
+// Mask
+$mask-bg-color: rgba(#fff, .5);
+$mask-tip-color: $grey-9;
+$mask-tip-padding: $spacing-scale-6;
+$mask-tip-letter-spacing: .1px;
+$mask-tip-font-weight: 500;
+$mask-z-index: 1001;

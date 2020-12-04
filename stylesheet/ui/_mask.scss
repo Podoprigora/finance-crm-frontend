@@ -1,0 +1,75 @@
+.mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: $mask-bg-color;
+	z-index: $mask-z-index;
+	cursor: wait;
+
+	&--fixed {
+		position: fixed;
+	}
+
+	&__spinner {
+		$spinner: &;
+
+		position: absolute;
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+		width: 100%;
+
+		&--center {
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&--top {
+			top: 0;
+		}
+
+		&--bottom {
+			bottom: 0;
+
+			#{$spinner}-tip {
+				order: -1;
+			}
+		}
+
+		&--primary {
+			#{$spinner}-tip {
+				color: $color-primary;
+			}
+		}
+
+		&-tip {
+			padding: $mask-tip-padding;
+			color: $mask-tip-color;
+			text-align: center;
+			font-weight: $mask-tip-font-weight;
+			letter-spacing: $mask-tip-letter-spacing;
+		}
+	}
+
+	&-enter,
+	&-appear {
+		opacity: 0;
+
+		&-active {
+			opacity: 1;
+			transition: opacity .25s;
+		}
+	}
+
+	&-exit {
+		opacity: 1;
+
+		&-active {
+			opacity: 0;
+			transition: opacity .2s;
+		}
+	}
+}
