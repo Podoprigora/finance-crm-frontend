@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { Card, Typography } from 'antd';
+import { Typography } from 'antd';
 
 import AuthService from '../../services/AuthService';
 import LoginForm from './LoginForm';
@@ -17,9 +17,16 @@ const LoginPage = () => {
 
     return (
         <div className="login-page">
-            <Card className="login-page__card">
-                <LoginForm onAsyncSubmit={handleAsyncFormSubmit} />
-            </Card>
+            <article className="login-page__card">
+                <header className="login-page__card-header">
+                    <Typography.Title className="login-page__card-title" level={4}>
+                        Войти в систему
+                    </Typography.Title>
+                </header>
+                <div className="login-page__card-body">
+                    <LoginForm onAsyncSubmit={handleAsyncFormSubmit} />
+                </div>
+            </article>
         </div>
     );
 };

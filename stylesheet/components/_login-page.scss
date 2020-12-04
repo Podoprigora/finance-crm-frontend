@@ -7,13 +7,28 @@
 	height: 100%;
 
 	&__card {
+		background-color: $white;
 		margin: $spacing-scale-10;
-		padding: $spacing-scale-10;
 		width: 100%;
 		max-width: 460px;
 		border-radius: 5px;
 		border: 0;
 		box-shadow: 0 .1rem .1rem 0 rgba($black, 0.05), 0 .1rem .3rem 0 rgba($black, 0.122);
 		overflow: hidden;
+
+		& &-header {
+			padding: $spacing-scale-12 $spacing-scale-18 0;
+			text-align: center;
+		}
+
+		& &-title {
+			color: $heading-color;
+			margin: 0;
+			line-height: 1;
+		}
+
+		& &-body {
+			padding: $spacing-scale-18;
+		}
 	}
 }

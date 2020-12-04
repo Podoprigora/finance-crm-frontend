@@ -1,6 +1,15 @@
 export default class ServiceResponse {
     constructor(response) {
-        this.response = response;
+        if (typeof response === 'string') {
+            try {
+                const json = JSON.parse(response);
+                this.response = json || {};
+            } catch (e) {
+                console.error(`[ServiceResponse]: Can't convert string: ${response} to json!`);
+            }
+        }
+
+        this.response = response || {};
     }
 
     get status() {
