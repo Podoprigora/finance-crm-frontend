@@ -22,11 +22,7 @@ const LoginPage = () => {
                 setLoading(false);
             }
 
-            if (response.fieldsError) {
-                return response.fieldsError;
-            }
-
-            return undefined;
+            return response;
         },
         [isMounterRef]
     );
@@ -39,6 +35,7 @@ const LoginPage = () => {
                         <LinearSpinner />
                     </MaskSpinner>
                 </Mask>
+
                 <header className="login-page__card-header">
                     <Typography.Title className="login-page__card-title" level={4}>
                         Войти в систему

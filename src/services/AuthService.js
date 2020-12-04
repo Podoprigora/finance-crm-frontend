@@ -3,6 +3,7 @@ import ServiceResponse from './utils/ServiceResponse';
 
 import loginSuccessResponse from './dummy_data/login-success.json';
 import loginFailureResponse from './dummy_data/login-failure.json';
+// import loginFailureResponse from './dummy_data/login-failure-v2.json';
 
 export default class AuthService {
     static async login(values, success = true) {

@@ -17,7 +17,7 @@
 		overflow: hidden;
 
 		& &-header {
-			padding: $spacing-scale-12 $spacing-scale-18 0;
+			padding: $spacing-scale-16 $spacing-scale-18 0;
 			text-align: center;
 		}
 
@@ -28,7 +28,7 @@
 		}
 
 		& &-body {
-			padding: $spacing-scale-18;
+			padding: $spacing-scale-16 $spacing-scale-18;
 		}
 	}
 }

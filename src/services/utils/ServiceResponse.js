@@ -27,7 +27,7 @@ export default class ServiceResponse {
     get fieldsError() {
         const errors = this.errors;
 
-        if (errors && errors.length > 0) {
+        if (errors && errors.length > 0 && errors[0] instanceof Object) {
             return errors.reduce((result, item) => {
                 const errorItem = Object.entries(item)[0];
 
