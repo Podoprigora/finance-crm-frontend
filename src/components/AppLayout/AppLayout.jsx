@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Breadcrumb, Layout } from 'antd';
 
 import Header from '../Header';
+import Footer from '../Footer';
+import Navigation from '../Navigation';
 
 const haderHeight = 56;
 const siderWidth = 240;
@@ -20,8 +22,9 @@ const AppLayout = (props) => {
                 <Layout.Sider
                     width={siderWidth}
                     className="app-layout__sider app-layout__sider--left"
+                    collapsed={false}
                 >
-                    Menu
+                    <Navigation />
                 </Layout.Sider>
                 <Layout className="app-layout" style={{ marginLeft: siderWidth }}>
                     <Breadcrumb
@@ -41,7 +44,7 @@ const AppLayout = (props) => {
                 </Layout>
             </Layout>
             <Layout.Footer className="app-layout__footer" style={{ height: haderHeight }}>
-                Footer
+                <Footer />
             </Layout.Footer>
         </Layout>
     );
