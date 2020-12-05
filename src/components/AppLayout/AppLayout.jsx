@@ -2,29 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Breadcrumb, Layout } from 'antd';
 
-const HEADER_HEIGHT = 56;
-const SIDER_WIDTH = 240;
-const BREADCRUMB_HEIGHT = 48;
+import Header from '../Header';
+
+const haderHeight = 56;
+const siderWidth = 240;
+const bradcrumbHeight = 48;
 
 const AppLayout = (props) => {
     const { children } = props;
 
     return (
         <Layout className="app-layout">
-            <Layout.Header className="app-layout__header" style={{ height: HEADER_HEIGHT }}>
-                Header
+            <Layout.Header className="app-layout__header" style={{ height: haderHeight }}>
+                <Header />
             </Layout.Header>
-            <Layout className="app-layout" style={{ marginTop: HEADER_HEIGHT }}>
+            <Layout className="app-layout" style={{ marginTop: haderHeight }}>
                 <Layout.Sider
-                    width={SIDER_WIDTH}
+                    width={siderWidth}
                     className="app-layout__sider app-layout__sider--left"
                 >
                     Menu
                 </Layout.Sider>
-                <Layout className="app-layout" style={{ marginLeft: SIDER_WIDTH }}>
+                <Layout className="app-layout" style={{ marginLeft: siderWidth }}>
                     <Breadcrumb
                         className="app-layout__breadcrumb"
-                        style={{ height: BREADCRUMB_HEIGHT }}
+                        style={{ height: bradcrumbHeight }}
                     >
                         <Breadcrumb.Item>Item 1</Breadcrumb.Item>
                         <Breadcrumb.Item>Item 2</Breadcrumb.Item>
@@ -32,13 +34,13 @@ const AppLayout = (props) => {
                     </Breadcrumb>
                     <Layout.Content
                         className="app-layout__content"
-                        style={{ marginTop: BREADCRUMB_HEIGHT, marginBottom: HEADER_HEIGHT }}
+                        style={{ marginTop: bradcrumbHeight, marginBottom: haderHeight }}
                     >
                         {children}
                     </Layout.Content>
                 </Layout>
             </Layout>
-            <Layout.Footer className="app-layout__footer" style={{ height: HEADER_HEIGHT }}>
+            <Layout.Footer className="app-layout__footer" style={{ height: haderHeight }}>
                 Footer
             </Layout.Footer>
         </Layout>

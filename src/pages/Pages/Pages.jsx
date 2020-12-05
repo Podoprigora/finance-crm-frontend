@@ -12,7 +12,9 @@ const Pages = () => {
                     <LoginPage />
                 </Route>
                 <Route>
-                    <AppLayout>Route Content</AppLayout>
+                    <AppLayout>
+                        <div style={{ width: '2000px', height: '3000px' }}>Route Content!</div>
+                    </AppLayout>
                 </Route>
             </Switch>
         </HashRouter>
